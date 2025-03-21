@@ -1,0 +1,283 @@
+\documentclass{scrartcl}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage{tweaktitle}
+
+\begin{document}
+
+\titlehead{\hfill\includegraphics[width=8em]{rda-logo}}
+\title{Sample Type Classification WG}
+\subtitle{Statement of Work}
+
+\maketitle
+
+\begin{abstract}\noindent
+  This document formulates the Statement of Work for the RDA Sample
+  Type Classification Working Group in the course of formation,
+  conforming to the RDA guidelines for creating a working group.
+\end{abstract}
+
+\section{WG Charter}
+
+The working group will develop a recommendation for one or more
+vocabularies for global, cross-domain classification of material
+sample types.  The vocabularies are intended to cover all types of
+samples being investigated in the sciences.  This includes natural and
+human-made physical objects, but also digital representations of those
+being used in computer simulations.  The scope of the vocabularies
+will be limited to the top-level sample type classification.  The
+detailed description of the samples will be left to existing
+domain-specific vocabularies.
+
+The working group intends to follow the guidelines presented in Cox et
+al, 2021\footnote{Cox SJD, Gonzalez-Beltran AN, Magagna B, Marinescu
+  M-C (2021) Ten simple rules for making a vocabulary FAIR. PLoS
+  Comput Biol 17(6): e1009041.
+  \url{https://doi.org/10.1371/journal.pcbi.1009041}} for implementing
+FAIR vocabularies.
+
+
+\section{Value Proposition}
+
+In sciences, raw data is often collected from experimental or
+computational data acquisitions made on physical or simulated objects.
+In many cases, information about the experimental or computational
+techniques and the parameters of the data acquisition can be captured
+automatically by the device or the control software.  But information
+about the subject under investigation, i.e.\ the sample, needs to be
+acquired by other means, typically manually, and, as a result, in many
+cases is not well represented in the dataset’s metadata.  Without
+information documenting sample acquisition and processing prior to
+analysis, the data produced is neither interoperable nor reusable.
+That is not FAIR!  We need better sample descriptions in our datasets.
+
+Many kinds of samples are the subject of analysis. Some examples:
+\begin{itemize}
+\item single crystals, crystal powder, novel functional materials,
+\item complex structures: solar cells, batteries,
+\item macromolecular crystals, e.g.\ proteins,
+\item archaeological artefacts, fossils, minerals, rocks,
+\item artwork, e.g.\ paintings,
+\item living plants, environmental samples,
+\item virtual samples generated for computational modeling (e.g.\
+  alloy microstructures).
+\end{itemize}
+
+As a result, any schema for the sample description at global level can
+only be very generic.
+
+Many metadata standards for sample descriptions are available.
+However, most of them are limited to a particular type of sample
+within a specific scientific domain and are not applicable to others.
+Given the huge variety of physical objects investigated in the
+sciences, it is not realistic to come up with a common overarching
+standard that would be applicable to describe all kinds of samples.
+
+This creates a challenge for repositories that need to host sample
+descriptions from all domains.  They would need to classify the sample
+first and know its type in order to know which standard is suitable to
+describe it.  Such a sample classification would need a standardized
+vocabulary that should apply to any physical sample being
+investigated.  An overarching vocabulary that is generally applicable
+needs to be interoperable, and to connect to domain specific
+vocabularies.
+
+The top-level classification of sample types should be shallow but
+very broad, applicable to all sorts of objects from all domains.  It
+is not intended to replace domain specific vocabularies, but to
+connect them.
+
+\section{Engagement with existing work in the area}
+
+The working group will operate under the auspices of the RDA Physical
+Samples and Collections in the Research Data Ecosystem Interest
+Group.\footnote{\url{https://www.rd-alliance.org/groups/physical-samples-and-collections-research-data-ecosystem-ig/}}
+The group will start by collecting existing vocabularies in use to
+categorize samples, for example:
+\begin{itemize}
+\item iSamples (\url{https://isamplesorg.github.io/vocabularies/})
+\item Biodiversity Information Standards (TDWG) sample type
+  (\url{https://www.tdwg.org/community/osr/material-sample/})
+\item DISSCO (\url{https://www.dissco.eu/})
+\item the GeoSciML vocabularies of the Commission for Geoscience
+  Information of the International Union of Geological Sciences
+  (\url{http://geosciml.org/resource/def/voc/})
+\item Geoscience Australia (\url{https://vocabs.ga.gov.au/vocab/})
+\end{itemize}
+
+\section{UN Sustainable Development Goals (SDGs)}
+
+The vocabularies for sample type classification developed by the
+working group will contribute to make the data collected from
+experimental measurements on physical samples FAIR.  While there is no
+direct relation between this work to any of the SDGs, it is assumed
+that the science that is enabled by FAIR data will have an impact on
+implementing the SDGs in general.
+
+\section{Work Plan}
+
+The work that the group needs to do can be roughly described by the
+following task list:
+\begin{itemize}
+\item Create a github repository for sharing activities, creating
+  issues, and maintaining versions.
+\item Collect use cases, providing an overview of things that we need
+  to look at.
+\item Identify existing candidate cross-domain vocabularies
+  (e.g.\ iSamples).
+\item Harmonize the candidates to generate a proposal for draft
+  vocabularies.  Implement (e.g.\ in SKOS) and publish the draft(s) in
+  the Github repository.
+\item Test the draft vocabularies by mapping sample descriptions from
+  existing sample registration databases.  Working group participants
+  will identify existing repositories of sample descriptions.  Working
+  group participants will work on mapping for sample descriptions in
+  their domain of expertise.
+\item Generate GitHub issues to report gaps, inconsistencies, or
+  suggested modifications.
+\item Working group meets virtually on a regular basis to discuss and
+  resolve issues and make decisions on updates to the draft
+  vocabulary.
+\item Iterate test, review, update cycle until WG agrees that a
+  workable recommendation has been developed.
+\item Draft recommendation document.
+\item Publish the product on a public vocabulary service with
+  resolvable URIs.
+\end{itemize}
+
+Assuming the formal work period of the group to start with IDW 2025,
+this work plan can be split into the following milestones:
+\begin{description}
+\item[M0, RDA P25 / IDW 2025] Kick off for the group, present the
+  group and its goals, discuss the work plan, involve additional
+  contributors.
+\item[M6, RDA P26] present use cases and ``landscape analysis'',
+  e.g.\ an overview of existing vocabularies that we need to take into
+  account and build upon, discuss plans for vocabularies.
+\item[M12, RDA P27] present draft vocabularies, gather feedback from
+  the community, incite early adopters to test the draft.
+\item[M18, RDA P28] wrap up, present the draft recommendation document
+  and first adoption cases, transition to maintenance mode.
+\end{description}
+
+\section{Adoption Plan}
+
+The working group will engage with sample repositories and sample
+metadata aggregators (e.g.\ iSamples, IGSN/DataCite, DISSCO) as part
+of the vocabulary development process, with the intention that the WG
+include participants responsible for interoperable sample descriptions
+in their purview.  Such involvement should motivate application of the
+product vocabularies by these systems.
+
+Frictionless access to vocabularies in whole or as individual terms
+via a public, web-based vocabulary service will minimize the effort
+required to adopt and use vocabularies.
+
+WG operation and publication via GitHub will foster participation in
+maintenance and update of the vocabularies, whether by the RDA
+Physical Samples and Collections in the Research Data Ecosystems IG,
+Earth Science Information Partners (ESIP), or some other persistent
+organization.
+
+\section{Initial Membership}
+
+\begin{itemize}
+\item Dave Vieglais
+\item David Elbert (co-chair)
+\item Heike Görzig
+\item Katherine Rial
+\item Kirsten Elger (co-chair, tbc)
+\item Kirsty Syder
+\item Lesley Wyborn (co-chair, tbc)
+\item Petra ten Hoopen (co-chair)
+\item Rolf Krahl (co-chair)
+\item Rossella Aversa
+\item Stephen Richard
+\item Steve Collins
+\end{itemize}
+
+\end{document}
+
+
+DRAFT case statement:  Sample Type Classification WG
+
+WG Charter
+
+The working group will develop a recommendation for one or more vocabularies for global, cross-domain classification of material sample types. The vocabularies are intended to cover all types of samples being investigated in the sciences. This includes natural and human-made physical objects, but also digital representations of those being used in computer simulations. The scope of the vocabularies will be limited to the top-level sample type classification. The detailed description of the samples will be left to existing domain-specific vocabularies. The working group intends to follow the guidelines presented in Cox et al, 2021 for implementing FAIR vocabularies.
+
+Value Proposition
+
+In sciences, raw data is often collected from experimental or computational data acquisitions made on physical or simulated objects. In many cases, information about the experimental or computational techniques and the parameters of the data acquisition can be captured automatically by the device or the control software. But information about the subject under investigation, i.e. the sample, needs to be acquired by other means, typically manually, and, as a result, in many cases is not well represented in the dataset’s metadata. Without information documenting sample acquisition and processing prior to analysis, the data produced is neither interoperable nor reusable. That is not FAIR! We need better sample descriptions in our datasets.
+
+Many kinds of samples are the subject of analysis. Some examples:
+single crystals, crystal powder, novel functional materials,
+complex structures: solar cells, batteries,
+macromolecular crystals, e.g. proteins,
+archaeological artefacts, fossils, minerals, rocks
+artwork, e.g. paintings,
+living plants, environmental samples
+virtual samples generated for computational modeling (e.g. alloy microstructures)
+
+As a result, any schema for the sample description at global level can only be very generic.
+
+Many metadata standards for sample descriptions are available. However, most of them are limited to a particular type of sample within a specific scientific domain and are not applicable to others. Given the huge variety of physical objects investigated in the sciences, it is not realistic to come up with a common overarching standard that would be applicable to describe all kinds of samples.
+
+This creates a challenge for repositories that need to host sample descriptions from all domains. They would need to classify the sample first and know its type in order to know which standard is suitable to describe it. Such a sample classification would need a standardized vocabulary that should apply to any physical sample being investigated. An overarching vocabulary that is generally applicable needs to be interoperable, and to connect to domain specific vocabularies.
+
+The top-level classification of sample types should be shallow but very broad, applicable to all sorts of objects from all domains. It is not intended to replace domain specific vocabularies, but to connect them.
+
+Engagement with existing work in the area 
+
+The working group will operate under the auspices of the RDA Physical Samples and Collections in the Research Data Ecosystem Interest Group. The group will start by collecting existing vocabularies in use to categorize samples, for example:
+iSamples (https://isamplesorg.github.io/vocabularies/)
+Biodiversity Information Standards (TDWG) sample type (https://www.tdwg.org/community/osr/material-sample/)
+DISSCO (https://www.dissco.eu/)
+the GeoSciML vocabularies of the Commission for Geoscience Information of the International Union of Geological Sciences (http://geosciml.org/resource/def/voc/)
+Geoscience Australia (https://vocabs.ga.gov.au/vocab/)
+[add links to other relevant activities]. 
+
+UN Sustainable Development Goals (SDGs)
+
+The vocabularies for sample type classification developed by the working group will contribute to make the data collected from experimental measurements on physical samples FAIR. While there is no direct relation between this work to any of the SDGs, it is assumed that the science that is enabled by FAIR data will have an impact on implementing the SDGs in general.
+
+Work Plan 
+
+The work that the group needs to do can be roughly described by the following task list:
+Create a github repository for sharing activities, creating issues, and maintaining versions.
+Collect use cases, providing an overview of things that we need to look at.
+Identify existing candidate cross-domain vocabularies (e.g. iSamples).
+Harmonize the candidates to generate a proposal for draft vocabularies. Implement (e.g. in SKOS) and publish the draft(s) in the Github repository.
+Test the draft vocabularies by mapping sample descriptions from existing sample registration databases. Working group participants will identify existing repositories of sample descriptions. Working group participants will work on mapping for sample descriptions in their domain of expertise. 
+Generate GitHub issues to report gaps, inconsistencies, or suggested modifications.
+Working group meets virtually on a regular basis to discuss and resolve issues and make decisions on updates to the draft vocabulary.
+Iterate test, review, update cycle until WG agrees that a workable recommendation has been developed.
+Draft recommendation document.
+Publish the product on a public vocabulary service with resolvable URIs. 
+Assuming the formal work period of the group to start with IDW 2025, this work plan can be split into the following milestones:
+M0, RDA P25 / IDW 2025: Kick off for the group, present the group and its goals, discuss the work plan, involve additional contributors.
+M6, RDA P26: present use cases and “landscape analysis”, e.g. an overview of existing vocabularies that we need to take into account and build upon, discuss plans for vocabularies.
+M12, RDA P27: present draft vocabularies, gather feedback from the community, incite early adopters to test the draft.
+M18, RDA P28: wrap up, present the draft recommendation document and first adoption cases, transition to maintenance mode.
+
+Adoption Plan
+
+The working group will engage with sample repositories and sample metadata aggregators (e.g. iSamples, IGSN/DataCite, DISSCO) as part of the vocabulary development process, with the intention that the WG include participants responsible for interoperable sample descriptions in their purview. Such involvement should motivate application of the product vocabularies by these systems. 
+Frictionless access to vocabularies in whole or as individual terms via a public, web-based vocabulary service will minimize the effort required to adopt and use vocabularies.
+WG operation and publication via GitHub will foster participation in maintenance and update of the vocabularies, whether by the RDA Physical Samples and Collections in the Research Data Ecosystems Interest Group, Earth Science Information Partners (ESIP), or some other persistent organization. 
+
+Initial Membership
+
+Stephen Richard
+Rolf Krahl (co-chair)
+Rossella Aversa
+Heike Görzig
+Dave Vieglais
+Petra ten Hoopen (co-chair)
+Lesley Wyborn (co-chair, tbc)
+David Elbert (co-chair)
+Kirsten Elger (co-chair, tbc)
+Steve Collins
+Kirsty Syder

@@ -1,0 +1,35 @@
+\ProvidesPackage{tweaktitle}[2025/03/21]
+
+% Hack the \@maketitle command from scrartcl.cls:
+% - Drop the \@author
+
+\renewcommand{\@maketitle}{%
+  \global\@topnum=\z@
+  \setparsizes{\z@}{\z@}{\z@\@plus 1fil}\par@updaterelative
+  \ifx\@titlehead\@empty \else
+    \begin{minipage}[t]{\textwidth}
+      \usekomafont{titlehead}{\@titlehead\par}%
+    \end{minipage}\par
+  \fi
+  \null
+  \vskip 2em%
+  \begin{center}%
+    \ifx\@subject\@empty \else
+      {\usekomafont{subject}{\@subject \par}}%
+      \vskip 1.5em
+    \fi
+    {\usekomafont{title}{\huge \@title \par}}%
+    \vskip .5em
+    {\ifx\@subtitle\@empty\else\usekomafont{subtitle}\@subtitle\par\fi}%
+    \vskip 1em
+    {\usekomafont{date}{\@date \par}}%
+    \vskip \z@ \@plus 1em
+    {\usekomafont{publishers}{\@publishers \par}}%
+    \ifx\@dedication\@empty \else
+      \vskip 2em
+      {\usekomafont{dedication}{\@dedication \par}}%
+    \fi
+  \end{center}%
+  \par
+  \vskip 2em
+}%
