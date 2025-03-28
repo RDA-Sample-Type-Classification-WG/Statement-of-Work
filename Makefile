@@ -60,8 +60,7 @@ distclean:
 %.pdf: %.tex
 	while true; do \
 	  $(PDFLATEX) $*; \
-	  grep -s 'Package rerunfilecheck Warning: File .* has changed.' \
-	      $*.log || break; \
+	  grep -s 'Package rerunfilecheck Warning:' $*.log || break; \
 	done
 
 %.pdf: %.eps
